@@ -182,7 +182,7 @@ This only logs on the success cases, but we could log on failure too.
 
 An alternative to this, which is probably more useful for error reporting specifically, is a contextual logging, rather than a sequential one. Instead of reporting all of the subgoals we've seen so far, we can instead report the path from the root goal down to the current failing goal:
 
-> type Context g = [Wrappged g]
+> type Context g = [Wrapped g]
 > type Contextual g = StateT (Context g) (Either (Context g))
 > contextualSearch :: Decomposable g => ProofProcess g a -> Contextual g a
 > contextualSearch (Done x) = return x
